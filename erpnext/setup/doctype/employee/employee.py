@@ -1,5 +1,7 @@
 # Copyright (c) 2015, Frappe Technologies Pvt. Ltd. and Contributors
 # License: GNU General Public License v3. See license.txt
+from datetime import datetime
+
 import frappe
 from frappe import _, scrub, throw
 from frappe.model.naming import set_name_by_naming_series
@@ -24,6 +26,97 @@ class InactiveEmployeeStatusError(frappe.ValidationError):
 
 
 class Employee(NestedSet):
+	# begin: auto-generated types
+	# This code is auto-generated. Do not modify anything in this block.
+
+	from typing import TYPE_CHECKING
+
+	if TYPE_CHECKING:
+		from erpnext.setup.doctype.employee_education.employee_education import EmployeeEducation
+		from erpnext.setup.doctype.employee_external_work_history.employee_external_work_history import EmployeeExternalWorkHistory
+		from erpnext.setup.doctype.employee_internal_work_history.employee_internal_work_history import EmployeeInternalWorkHistory
+		from frappe.types import DF
+
+		age: DF.Int
+		attendance_device_id: DF.Data | None
+		bank_ac_no: DF.Data | None
+		bank_name: DF.Data | None
+		bio: DF.TextEditor | None
+		blood_group: DF.Literal["", "A", "A+", "A-", "B", "B+", "B-", "AB", "AB+", "AB-", "O", "O+", "O-"]
+		branch: DF.Link | None
+		cell_number: DF.Data | None
+		company: DF.Link
+		company_email: DF.Data | None
+		contract_end_date: DF.Date | None
+		create_user_permission: DF.Check
+		ctc: DF.Currency
+		current_accommodation_type: DF.Literal["", "Rented", "Owned"]
+		current_address: DF.SmallText | None
+		date_of_birth: DF.Date
+		date_of_issue: DF.Date | None
+		date_of_joining: DF.Date
+		date_of_retirement: DF.Date | None
+		department: DF.Link | None
+		designation: DF.Link
+		division: DF.Link | None
+		education: DF.Table[EmployeeEducation]
+		emergency_phone_number: DF.Data | None
+		employee: DF.Data | None
+		employee_name: DF.Data | None
+		employment_type: DF.Link
+		encashment_date: DF.Date | None
+		external_work_history: DF.Table[EmployeeExternalWorkHistory]
+		family_background: DF.SmallText | None
+		feedback: DF.SmallText | None
+		final_confirmation_date: DF.Date | None
+		first_name: DF.Data
+		gender: DF.Link
+		grade: DF.Link | None
+		health_details: DF.SmallText | None
+		held_on: DF.Date | None
+		holiday_list: DF.Link | None
+		iban: DF.Data | None
+		image: DF.AttachImage | None
+		internal_work_history: DF.Table[EmployeeInternalWorkHistory]
+		last_name: DF.Data | None
+		leave_encashed: DF.Literal["", "Yes", "No"]
+		lft: DF.Int
+		marital_status: DF.Literal["", "Single", "Married", "Divorced", "Widowed"]
+		middle_name: DF.Data | None
+		naming_series: DF.Literal["HR-EMP-"]
+		new_workplace: DF.Data | None
+		nik: DF.Data
+		nip: DF.Data | None
+		notice_number_of_days: DF.Int
+		old_parent: DF.Data | None
+		passport_number: DF.Data | None
+		permanent_accommodation_type: DF.Literal["", "Rented", "Owned"]
+		permanent_address: DF.SmallText | None
+		person_to_be_contacted: DF.Data | None
+		personal_email: DF.Data | None
+		place_of_birth: DF.Link
+		place_of_issue: DF.Data | None
+		prefered_contact_email: DF.Literal["", "Company Email", "Personal Email", "User ID"]
+		prefered_email: DF.Data | None
+		reason_for_leaving: DF.SmallText | None
+		relation: DF.Data | None
+		relieving_date: DF.Date | None
+		religion: DF.Link
+		reports_to: DF.Link | None
+		resignation_letter_date: DF.Date | None
+		rgt: DF.Int
+		salary_currency: DF.Link | None
+		salary_mode: DF.Literal["", "Bank", "Cash", "Cheque"]
+		salutation: DF.Link | None
+		scheduled_confirmation_date: DF.Date | None
+		section: DF.Link | None
+		status: DF.Literal["Active", "Inactive", "Suspended", "Left"]
+		team: DF.Link | None
+		unsubscribed: DF.Check
+		user_id: DF.Link | None
+		valid_upto: DF.Date | None
+	# end: auto-generated types
+
 	nsm_parent_field = "reports_to"
 
 	def autoname(self):
@@ -37,6 +130,7 @@ class Employee(NestedSet):
 
 		self.employee = self.name
 		self.set_employee_name()
+		self.set_employee_age()
 		self.validate_date()
 		self.validate_email()
 		self.validate_status()
@@ -61,6 +155,13 @@ class Employee(NestedSet):
 		self.employee_name = " ".join(
 			filter(lambda x: x, [self.first_name, self.middle_name, self.last_name])
 		)
+
+	def set_employee_age(self):
+		birthDate = datetime.strptime(self.date_of_birth, "%Y-%m-%d")
+		todays = getdate(today())
+		self.age = todays.year - birthDate.year - ((todays.month, todays.day) < (birthDate.month, birthDate.day))
+		print(f'age is {self.age} years old')
+
 
 	def validate_user_details(self):
 		if self.user_id:
