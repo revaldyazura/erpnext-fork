@@ -29,6 +29,20 @@ frappe.ui.form.on("Employee", {
 				},
 			};
 		});
+		frm.set_query("division", function () {
+			return {
+				filters: {
+					company: frm.doc.company,
+				},
+			};
+		});
+		frm.set_query("section", function () {
+			return {
+				filters: {
+					company: frm.doc.company,
+				},
+			};
+		});
 	},
 
 	refresh: function (frm) {

@@ -160,7 +160,6 @@ class Employee(NestedSet):
 		birthDate = datetime.strptime(self.date_of_birth, "%Y-%m-%d")
 		todays = getdate(today())
 		self.age = todays.year - birthDate.year - ((todays.month, todays.day) < (birthDate.month, birthDate.day))
-		print(f'age is {self.age} years old')
 
 
 	def validate_user_details(self):
