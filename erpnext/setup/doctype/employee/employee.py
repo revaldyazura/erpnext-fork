@@ -157,7 +157,10 @@ class Employee(NestedSet):
 		)
 
 	def set_employee_age(self):
-		birthDate = datetime.strptime(self.date_of_birth, "%Y-%m-%d")
+		if isinstance(self.date_of_birth, str):
+			birthDate = datetime.strptime(self.date_of_birth, "%Y-%m-%d")
+		else:
+			birthDate = getdate(self.date_of_birth)
 		todays = getdate(today())
 		self.age = todays.year - birthDate.year - ((todays.month, todays.day) < (birthDate.month, birthDate.day))
 
