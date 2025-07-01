@@ -56,6 +56,7 @@
   "date_of_retirement",
   "contact_details",
   "cell_number",
+  "user_telegram",
   "column_break_40",
   "personal_email",
   "company_email",
@@ -90,6 +91,7 @@
   "iban",
   "personal_details",
   "marital_status",
+  "married_date",
   "family_background",
   "column_break6",
   "blood_group",
@@ -97,6 +99,8 @@
   "column_break_crky",
   "religion",
   "nik",
+  "npwp",
+  "kk_number",
   "passport_details_section",
   "passport_number",
   "valid_upto",
@@ -548,13 +552,7 @@
    "fieldname": "marital_status",
    "fieldtype": "Select",
    "label": "Marital Status",
-   "options": "\nSingle\nMarried\nDivorced\nWidowed"
-  },
-  {
-   "fieldname": "blood_group",
-   "fieldtype": "Select",
-   "label": "Blood Group",
-   "options": "\nA\nA+\nA-\nB\nB+\nB-\nAB\nAB+\nAB-\nO\nO+\nO-"
+   "options": "\nSingle\nMarried\nDivorced\nWidowed\nTK/0\nTK/0\nTK/0"
   },
   {
    "description": "Here you can maintain family details like name and occupation of parent, spouse and children",
@@ -623,7 +621,7 @@
   {
    "fieldname": "relieving_date",
    "fieldtype": "Date",
-   "label": "Relieving Date",
+   "label": "Resign Date",
    "mandatory_depends_on": "eval:doc.status == \"Left\"",
    "no_copy": 1,
    "oldfieldname": "relieving_date",
@@ -894,6 +892,32 @@
    "label": "Employment Type",
    "options": "Employment Type",
    "reqd": 1
+  },
+  {
+   "fieldname": "blood_group",
+   "fieldtype": "Select",
+   "label": "Blood Type",
+   "options": "\nA\nA+\nA-\nB\nB+\nB-\nAB\nAB+\nAB-\nO\nO+\nO-"
+  },
+  {
+   "fieldname": "user_telegram",
+   "fieldtype": "Data",
+   "label": "User Telegram"
+  },
+  {
+   "fieldname": "npwp",
+   "fieldtype": "Data",
+   "label": "NPWP"
+  },
+  {
+   "fieldname": "kk_number",
+   "fieldtype": "Data",
+   "label": "KK Number"
+  },
+  {
+   "fieldname": "married_date",
+   "fieldtype": "Date",
+   "label": "Married Date"
   }
  ],
  "icon": "fa fa-user",
@@ -901,7 +925,7 @@
  "image_field": "image",
  "is_tree": 1,
  "links": [],
- "modified": "2025-06-25 14:51:43.599963",
+ "modified": "2025-06-30 15:58:40.030381",
  "modified_by": "Administrator",
  "module": "Setup",
  "name": "Employee",

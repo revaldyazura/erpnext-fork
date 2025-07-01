@@ -78,16 +78,19 @@ class Employee(NestedSet):
 		iban: DF.Data | None
 		image: DF.AttachImage | None
 		internal_work_history: DF.Table[EmployeeInternalWorkHistory]
+		kk_number: DF.Data | None
 		last_name: DF.Data | None
 		leave_encashed: DF.Literal["", "Yes", "No"]
 		lft: DF.Int
-		marital_status: DF.Literal["", "Single", "Married", "Divorced", "Widowed"]
+		marital_status: DF.Literal["", "Single", "Married", "Divorced", "Widowed", "TK/0", "TK/0", "TK/0"]
+		married_date: DF.Date | None
 		middle_name: DF.Data | None
 		naming_series: DF.Literal["HR-EMP-"]
 		new_workplace: DF.Data | None
 		nik: DF.Data
 		nip: DF.Data | None
 		notice_number_of_days: DF.Int
+		npwp: DF.Data | None
 		old_parent: DF.Data | None
 		passport_number: DF.Data | None
 		permanent_accommodation_type: DF.Literal["", "Rented", "Owned"]
@@ -114,6 +117,7 @@ class Employee(NestedSet):
 		team: DF.Link | None
 		unsubscribed: DF.Check
 		user_id: DF.Link | None
+		user_telegram: DF.Data | None
 		valid_upto: DF.Date | None
 	# end: auto-generated types
 
