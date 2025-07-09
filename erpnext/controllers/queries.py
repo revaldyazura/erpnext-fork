@@ -8,9 +8,10 @@ from collections import OrderedDict, defaultdict
 import frappe
 from frappe import qb, scrub
 from frappe.desk.reportview import get_filters_cond, get_match_cond
+from frappe.permissions import has_permission
 from frappe.query_builder import Criterion, CustomFunction
 from frappe.query_builder.functions import Concat, Locate, Sum
-from frappe.utils import nowdate, today, unique
+from frappe.utils import cint, nowdate, today, unique
 from pypika import Order
 
 import erpnext
@@ -20,10 +21,28 @@ from erpnext.stock.get_item_details import ItemDetailsCtx, _get_item_tax_templat
 # searches for active employees
 @frappe.whitelist()
 @frappe.validate_and_sanitize_search_inputs
-def employee_query(doctype, txt, searchfield, start, page_len, filters):
+def employee_query(
+	doctype,
+	txt,
+	searchfield,
+	start,
+	page_len,
+	filters,
+	reference_doctype: str | None = None,
+	ignore_user_permissions: bool = False,
+):
 	doctype = "Employee"
 	conditions = []
 	fields = get_fields(doctype, ["name", "employee_name"])
+	ignore_permissions = False
+
+	if reference_doctype and ignore_user_permissions:
+		ignore_permissions = has_ignored_field(reference_doctype, doctype) and has_permission(
+			doctype,
+			ptype="select" if frappe.only_has_select_perm(doctype) else "read",
+		)
+
+	mcond = "" if ignore_permissions else get_match_cond(doctype)
 
 	return frappe.db.sql(
 		"""select {fields} from `tabEmployee`
@@ -42,11 +61,30 @@ def employee_query(doctype, txt, searchfield, start, page_len, filters):
 				"fields": ", ".join(fields),
 				"key": searchfield,
 				"fcond": get_filters_cond(doctype, filters, conditions),
-				"mcond": get_match_cond(doctype),
+				"mcond": mcond,
 			}
 		),
 		{"txt": "%%%s%%" % txt, "_txt": txt.replace("%", ""), "start": start, "page_len": page_len},
 	)
+
+
+def has_ignored_field(reference_doctype, doctype):
+	meta = frappe.get_meta(reference_doctype)
+	for field in meta.fields:
+		if not field.ignore_user_permissions:
+			continue
+		if field.fieldtype == "Link" and field.options == doctype:
+			return True
+		elif field.fieldtype == "Dynamic Link":
+			options = meta.get_link_doctype(field.fieldname)
+			if not options:
+				continue
+			if isinstance(options, str):
+				options = options.split("\n")
+			if doctype in options or "DocType" in options:
+				return True
+
+	return False
 
 
 # searches for leads which are not converted
@@ -198,7 +236,7 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 			filters.pop("supplier", None)
 
 	description_cond = ""
-	if frappe.db.count(doctype, cache=True) < 50000:
+	if frappe.db.estimate_count(doctype) < 50000:
 		# scan description only if items are less than 50000
 		description_cond = "or tabItem.description LIKE %(txt)s"
 
@@ -361,7 +399,7 @@ def get_batch_no(doctype, txt, searchfield, start, page_len, filters):
 	doctype = "Batch"
 	meta = frappe.get_meta(doctype, cached=True)
 	searchfields = meta.get_search_fields()
-	page_len = 30
+	page_len = 300
 
 	batches = get_batches_from_stock_ledger_entries(searchfields, txt, filters, start, page_len)
 	batches.extend(get_batches_from_serial_and_batch_bundle(searchfields, txt, filters, start, page_len))
@@ -910,7 +948,7 @@ def get_filtered_child_rows(doctype, txt, searchfield, start, page_len, filters)
 @frappe.whitelist()
 @frappe.validate_and_sanitize_search_inputs
 def get_item_uom_query(doctype, txt, searchfield, start, page_len, filters):
-	if frappe.db.get_single_value("Stock Settings", "allow_uom_with_conversion_rate_defined_in_item"):
+	if frappe.get_single_value("Stock Settings", "allow_uom_with_conversion_rate_defined_in_item"):
 		query_filters = {"parent": filters.get("item_code")}
 
 		if txt:
@@ -928,7 +966,7 @@ def get_item_uom_query(doctype, txt, searchfield, start, page_len, filters):
 
 	return frappe.get_all(
 		"UOM",
-		filters={"name": ["like", f"%{txt}%"]},
+		filters={"name": ["like", f"%{txt}%"], "enabled": 1},
 		fields=["name"],
 		limit_start=start,
 		limit_page_length=page_len,

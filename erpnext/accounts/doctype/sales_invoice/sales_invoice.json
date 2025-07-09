@@ -29,6 +29,8 @@
   "update_billed_amount_in_delivery_note",
   "is_debit_note",
   "amended_from",
+  "is_created_using_pos",
+  "pos_closing_entry",
   "accounting_dimensions_section",
   "cost_center",
   "dimension_col_break",
@@ -1995,6 +1997,7 @@
    "fieldname": "amount_eligible_for_commission",
    "fieldtype": "Currency",
    "label": "Amount Eligible for Commission",
+   "options": "Company:company:default_currency",
    "read_only": 1
   },
   {
@@ -2199,6 +2202,23 @@
    "label": "Company Contact Person",
    "options": "Contact",
    "print_hide": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_created_using_pos",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "Is created using POS",
+   "print_hide": 1
+  },
+  {
+   "depends_on": "is_created_using_pos",
+   "fieldname": "pos_closing_entry",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "POS Closing Entry",
+   "options": "POS Closing Entry",
+   "print_hide": 1
   }
  ],
  "grid_page_length": 50,
@@ -2212,7 +2232,7 @@
    "link_fieldname": "consolidated_invoice"
   }
  ],
- "modified": "2025-03-17 19:32:31.809658",
+ "modified": "2025-06-26 14:06:56.773552",
  "modified_by": "Administrator",
  "module": "Accounts",
  "name": "Sales Invoice",

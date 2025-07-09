@@ -68,7 +68,7 @@ class TransactionBase(StatusUpdater):
 					frappe.throw(_("Invalid reference {0} {1}").format(reference_doctype, reference_name))
 
 				for field, condition in fields:
-					if prevdoc_values[field] is not None and field not in self.exclude_fields:
+					if prevdoc_values[field] not in [None, ""] and field not in self.exclude_fields:
 						self.validate_value(field, condition, prevdoc_values[field], doc)
 
 	def get_prev_doc_reference_details(self, reference_names, reference_doctype, fields):
@@ -166,6 +166,9 @@ class TransactionBase(StatusUpdater):
 		child_table_values = set()
 
 		for row in self.get(child_table):
+			if default_field == "set_warehouse" and row.get("delivered_by_supplier"):
+				continue
+
 			child_table_values.add(row.get(child_table_field))
 
 		if len(child_table_values) > 1:
@@ -296,6 +299,10 @@ class TransactionBase(StatusUpdater):
 		item_details = self.fetch_item_details(item_obj)
 
 		self.set_fetched_values(item_obj, item_details)
+
+		if self.doctype == "Request for Quotation":
+			return
+
 		self.set_item_rate_and_discounts(item_obj, item_details)
 		self.add_taxes_from_item_template(item_obj, item_details)
 		self.add_free_item(item_obj, item_details)
@@ -347,7 +354,7 @@ class TransactionBase(StatusUpdater):
 			self.set_rate_based_on_price_list(item_obj, item_details)
 
 	def add_taxes_from_item_template(self, item_obj: object, item_details: dict) -> None:
-		if item_details.item_tax_rate and frappe.db.get_single_value(
+		if item_details.item_tax_rate and frappe.get_single_value(
 			"Accounts Settings", "add_taxes_from_item_tax_template"
 		):
 			item_tax_template = frappe.json.loads(item_details.item_tax_rate)

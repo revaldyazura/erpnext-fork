@@ -590,7 +590,7 @@ class SubcontractingController(StockController):
 
 		rm_obj.reference_name = item_row.name
 
-		use_serial_batch_fields = frappe.db.get_single_value("Stock Settings", "use_serial_batch_fields")
+		use_serial_batch_fields = frappe.get_single_value("Stock Settings", "use_serial_batch_fields")
 
 		if self.doctype == self.subcontract_data.order_doctype:
 			rm_obj.required_qty = flt(qty, rm_obj.precision("required_qty"))
@@ -607,12 +607,15 @@ class SubcontractingController(StockController):
 				rm_obj.use_serial_batch_fields = 1
 				self.__set_batch_nos(bom_item, item_row, rm_obj, qty)
 
-		if self.doctype == "Subcontracting Receipt" and not use_serial_batch_fields:
-			rm_obj.serial_and_batch_bundle = self.__set_serial_and_batch_bundle(
-				item_row, rm_obj, rm_obj.consumed_qty
-			)
+		if self.doctype == "Subcontracting Receipt":
+			if not use_serial_batch_fields:
+				rm_obj.serial_and_batch_bundle = self.__set_serial_and_batch_bundle(
+					item_row, rm_obj, rm_obj.consumed_qty
+				)
 
-			self.set_rate_for_supplied_items(rm_obj, item_row)
+				self.set_rate_for_supplied_items(rm_obj, item_row)
+			elif self.backflush_based_on == "BOM":
+				self.update_rate_for_supplied_items()
 
 	def update_rate_for_supplied_items(self):
 		if self.doctype != "Subcontracting Receipt":
