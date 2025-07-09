@@ -229,6 +229,7 @@
    "oldfieldname": "status",
    "oldfieldtype": "Select",
    "options": "Active\nInactive\nSuspended\nLeft",
+   "reqd": 1,
    "search_index": 1
   },
   {
