@@ -1,4 +1,5 @@
 {
+ "app": "erpnext",
  "charts": [
   {
    "chart_name": "Territory Wise Sales",
@@ -14,7 +15,7 @@
  "hide_custom": 0,
  "icon": "crm",
  "idx": 0,
- "is_hidden": 0,
+ "is_hidden": 1,
  "label": "CRM",
  "links": [
   {
@@ -232,7 +233,7 @@
    "is_query_report": 0,
    "label": "Newsletter",
    "link_count": 0,
-   "link_to": "Newsletter",
+   "link_to": "Dunning Letter Text",
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
@@ -420,7 +421,7 @@
    "type": "Link"
   }
  ],
- "modified": "2024-09-12 04:43:41.406488",
+ "modified": "2025-07-09 21:25:22.234266",
  "modified_by": "Administrator",
  "module": "CRM",
  "name": "CRM",
@@ -457,6 +458,7 @@
   {
    "label": "Sales Analytics",
    "link_to": "Sales Analytics",
+   "report_ref_doctype": "Sales Order",
    "type": "Report"
   },
   {
@@ -465,5 +467,6 @@
    "type": "Dashboard"
   }
  ],
- "title": "CRM"
+ "title": "CRM",
+ "type": "Workspace"
 }

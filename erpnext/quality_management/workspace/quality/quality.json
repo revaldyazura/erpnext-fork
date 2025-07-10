@@ -1,4 +1,5 @@
 {
+ "app": "erpnext",
  "charts": [],
  "content": "[{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Your Shortcuts</b></span>\",\"col\":12}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Quality Goal\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Quality Procedure\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Quality Inspection\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Quality Review\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Quality Action\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Non Conformance\",\"col\":3}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports & Masters</b></span>\",\"col\":12}},{\"type\":\"card\",\"data\":{\"card_name\":\"Goal and Procedure\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Feedback\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Meeting\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Review and Action\",\"col\":4}}]",
  "creation": "2020-03-02 15:49:28.632014",
@@ -9,7 +10,7 @@
  "hide_custom": 0,
  "icon": "quality",
  "idx": 0,
- "is_hidden": 0,
+ "is_hidden": 1,
  "label": "Quality",
  "links": [
   {
@@ -144,7 +145,7 @@
    "type": "Link"
   }
  ],
- "modified": "2023-05-24 14:47:22.597974",
+ "modified": "2025-07-09 21:20:19.850848",
  "modified_by": "Administrator",
  "module": "Quality Management",
  "name": "Quality",
@@ -204,5 +205,6 @@
    "type": "DocType"
   }
  ],
- "title": "Quality"
+ "title": "Quality",
+ "type": "Workspace"
 }

@@ -1,4 +1,5 @@
 {
+ "app": "erpnext",
  "charts": [
   {
    "chart_name": "Project Summary",
@@ -14,7 +15,7 @@
  "hide_custom": 0,
  "icon": "project",
  "idx": 0,
- "is_hidden": 0,
+ "is_hidden": 1,
  "label": "Projects",
  "links": [
   {
@@ -192,7 +193,7 @@
    "type": "Link"
   }
  ],
- "modified": "2023-10-10 23:54:33.082108",
+ "modified": "2025-07-09 21:20:38.686534",
  "modified_by": "Administrator",
  "module": "Projects",
  "name": "Projects",
@@ -236,6 +237,7 @@
   {
    "label": "Timesheet Billing Summary",
    "link_to": "Timesheet Billing Summary",
+   "report_ref_doctype": "Timesheet",
    "type": "Report"
   },
   {
@@ -244,5 +246,6 @@
    "type": "Dashboard"
   }
  ],
- "title": "Projects"
+ "title": "Projects",
+ "type": "Workspace"
 }
