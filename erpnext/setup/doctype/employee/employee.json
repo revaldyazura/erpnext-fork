@@ -43,8 +43,8 @@
   "designation",
   "column_break_18",
   "nip",
-  "employment_type",
   "grade",
+  "employment_type",
   "reports_to",
   "employment_details",
   "scheduled_confirmation_date",
@@ -164,7 +164,8 @@
    "label": "Salutation",
    "oldfieldname": "salutation",
    "oldfieldtype": "Select",
-   "options": "Salutation"
+   "options": "Salutation",
+   "permlevel": 1
   },
   {
    "allow_in_quick_entry": 1,
@@ -201,7 +202,8 @@
    "fieldtype": "Attach Image",
    "hidden": 1,
    "label": "Image",
-   "no_copy": 1
+   "no_copy": 1,
+   "permlevel": 1
   },
   {
    "allow_in_quick_entry": 1,
@@ -240,6 +242,7 @@
    "oldfieldname": "gender",
    "oldfieldtype": "Select",
    "options": "Gender",
+   "permlevel": 1,
    "reqd": 1
   },
   {
@@ -249,6 +252,7 @@
    "label": "Date of Birth",
    "oldfieldname": "date_of_birth",
    "oldfieldtype": "Date",
+   "permlevel": 1,
    "reqd": 1
   },
   {
@@ -258,6 +262,7 @@
    "label": "Date of Joining",
    "oldfieldname": "date_of_joining",
    "oldfieldtype": "Date",
+   "permlevel": 1,
    "reqd": 1
   },
   {
@@ -271,18 +276,21 @@
    "fieldname": "emergency_phone_number",
    "fieldtype": "Data",
    "label": "Emergency Phone",
-   "options": "Phone"
+   "options": "Phone",
+   "permlevel": 1
   },
   {
    "bold": 1,
    "fieldname": "person_to_be_contacted",
    "fieldtype": "Data",
-   "label": "Emergency Contact Name"
+   "label": "Emergency Contact Name",
+   "permlevel": 1
   },
   {
    "fieldname": "relation",
    "fieldtype": "Data",
-   "label": "Relation"
+   "label": "Relation",
+   "permlevel": 1
   },
   {
    "collapsible": 1,
@@ -324,14 +332,16 @@
    "fieldtype": "Date",
    "label": "Offer Date",
    "oldfieldname": "scheduled_confirmation_date",
-   "oldfieldtype": "Date"
+   "oldfieldtype": "Date",
+   "permlevel": 1
   },
   {
    "fieldname": "final_confirmation_date",
    "fieldtype": "Date",
    "label": "Confirmation Date",
    "oldfieldname": "final_confirmation_date",
-   "oldfieldtype": "Date"
+   "oldfieldtype": "Date",
+   "permlevel": 1
   },
   {
    "fieldname": "col_break_22",
@@ -342,21 +352,24 @@
    "fieldtype": "Date",
    "label": "Contract End Date",
    "oldfieldname": "contract_end_date",
-   "oldfieldtype": "Date"
+   "oldfieldtype": "Date",
+   "permlevel": 1
   },
   {
    "fieldname": "notice_number_of_days",
    "fieldtype": "Int",
    "label": "Notice (days)",
    "oldfieldname": "notice_number_of_days",
-   "oldfieldtype": "Int"
+   "oldfieldtype": "Int",
+   "permlevel": 1
   },
   {
    "fieldname": "date_of_retirement",
    "fieldtype": "Date",
    "label": "Date Of Retirement",
    "oldfieldname": "date_of_retirement",
-   "oldfieldtype": "Date"
+   "oldfieldtype": "Date",
+   "permlevel": 1
   },
   {
    "fieldname": "department",
@@ -405,7 +418,8 @@
    "label": "Holiday List",
    "oldfieldname": "holiday_list",
    "oldfieldtype": "Link",
-   "options": "Holiday List"
+   "options": "Holiday List",
+   "permlevel": 1
   },
   {
    "collapsible": 1,
@@ -421,7 +435,8 @@
    "label": "Salary Mode",
    "oldfieldname": "salary_mode",
    "oldfieldtype": "Select",
-   "options": "\nBank\nCash\nCheque"
+   "options": "\nBank\nCash\nCheque",
+   "permlevel": 1
   },
   {
    "depends_on": "eval:doc.salary_mode == 'Bank'",
@@ -429,7 +444,8 @@
    "fieldtype": "Data",
    "label": "Bank Name",
    "oldfieldname": "bank_name",
-   "oldfieldtype": "Link"
+   "oldfieldtype": "Link",
+   "permlevel": 1
   },
   {
    "depends_on": "eval:doc.salary_mode == 'Bank'",
@@ -437,7 +453,8 @@
    "fieldtype": "Data",
    "label": "Bank A/C No.",
    "oldfieldname": "bank_ac_no",
-   "oldfieldtype": "Data"
+   "oldfieldtype": "Data",
+   "permlevel": 1
   },
   {
    "collapsible": 1,
@@ -449,19 +466,22 @@
    "fieldname": "cell_number",
    "fieldtype": "Data",
    "label": "Mobile",
-   "options": "Phone"
+   "options": "Phone",
+   "permlevel": 1
   },
   {
    "fieldname": "prefered_contact_email",
    "fieldtype": "Select",
    "label": "Preferred Contact Email",
-   "options": "\nCompany Email\nPersonal Email\nUser ID"
+   "options": "\nCompany Email\nPersonal Email\nUser ID",
+   "permlevel": 1
   },
   {
    "fieldname": "prefered_email",
    "fieldtype": "Data",
    "label": "Preferred Email",
    "options": "Email",
+   "permlevel": 1,
    "read_only": 1
   },
   {
@@ -477,13 +497,15 @@
    "fieldname": "personal_email",
    "fieldtype": "Data",
    "label": "Personal Email",
-   "options": "Email"
+   "options": "Email",
+   "permlevel": 1
   },
   {
    "default": "0",
    "fieldname": "unsubscribed",
    "fieldtype": "Check",
-   "label": "Unsubscribed"
+   "label": "Unsubscribed",
+   "permlevel": 1
   },
   {
    "fieldname": "column_break4",
@@ -494,29 +516,34 @@
    "fieldname": "permanent_accommodation_type",
    "fieldtype": "Select",
    "label": "Permanent Address Is",
-   "options": "\nRented\nOwned"
+   "options": "\nRented\nOwned",
+   "permlevel": 1
   },
   {
    "fieldname": "permanent_address",
    "fieldtype": "Small Text",
-   "label": "Permanent Address"
+   "label": "Permanent Address",
+   "permlevel": 1
   },
   {
    "fieldname": "current_accommodation_type",
    "fieldtype": "Select",
    "label": "Current Address Is",
-   "options": "\nRented\nOwned"
+   "options": "\nRented\nOwned",
+   "permlevel": 1
   },
   {
    "fieldname": "current_address",
    "fieldtype": "Small Text",
-   "label": "Current Address"
+   "label": "Current Address",
+   "permlevel": 1
   },
   {
    "description": "Short biography for website and other publications.",
    "fieldname": "bio",
    "fieldtype": "Text Editor",
-   "label": "Bio / Cover Letter"
+   "label": "Bio / Cover Letter",
+   "permlevel": 1
   },
   {
    "collapsible": 1,
@@ -527,22 +554,26 @@
   {
    "fieldname": "passport_number",
    "fieldtype": "Data",
-   "label": "Passport Number"
+   "label": "Passport Number",
+   "permlevel": 1
   },
   {
    "fieldname": "date_of_issue",
    "fieldtype": "Date",
-   "label": "Date of Issue"
+   "label": "Date of Issue",
+   "permlevel": 1
   },
   {
    "fieldname": "valid_upto",
    "fieldtype": "Date",
-   "label": "Valid Up To"
+   "label": "Valid Up To",
+   "permlevel": 1
   },
   {
    "fieldname": "place_of_issue",
    "fieldtype": "Data",
-   "label": "Place of Issue"
+   "label": "Place of Issue",
+   "permlevel": 1
   },
   {
    "fieldname": "column_break6",
@@ -553,57 +584,66 @@
    "fieldname": "marital_status",
    "fieldtype": "Select",
    "label": "Marital Status",
-   "options": "\nSingle\nMarried\nDivorced\nWidowed\nTK/0\nTK/0\nTK/0"
+   "options": "\nSingle\nMarried\nDivorced\nWidowed\nTK/0\nTK/0\nTK/0",
+   "permlevel": 1
   },
   {
    "description": "Here you can maintain family details like name and occupation of parent, spouse and children",
    "fieldname": "family_background",
    "fieldtype": "Small Text",
-   "label": "Family Background"
+   "label": "Family Background",
+   "permlevel": 1
   },
   {
    "description": "Here you can maintain height, weight, allergies, medical concerns etc",
    "fieldname": "health_details",
    "fieldtype": "Small Text",
-   "label": "Health Details"
+   "label": "Health Details",
+   "permlevel": 1
   },
   {
    "collapsible": 1,
    "fieldname": "educational_qualification",
    "fieldtype": "Section Break",
-   "label": "Educational Qualification"
+   "label": "Educational Qualification",
+   "permlevel": 1
   },
   {
    "fieldname": "education",
    "fieldtype": "Table",
    "label": "Education",
-   "options": "Employee Education"
+   "options": "Employee Education",
+   "permlevel": 1
   },
   {
    "collapsible": 1,
    "fieldname": "previous_work_experience",
    "fieldtype": "Section Break",
    "label": "Previous Work Experience",
-   "options": "Simple"
+   "options": "Simple",
+   "permlevel": 1
   },
   {
    "fieldname": "external_work_history",
    "fieldtype": "Table",
    "label": "External Work History",
-   "options": "Employee External Work History"
+   "options": "Employee External Work History",
+   "permlevel": 1
   },
   {
    "collapsible": 1,
    "fieldname": "history_in_company",
    "fieldtype": "Section Break",
    "label": "History In Company",
-   "options": "Simple"
+   "options": "Simple",
+   "permlevel": 1
   },
   {
    "fieldname": "internal_work_history",
    "fieldtype": "Table",
    "label": "Internal Work History",
-   "options": "Employee Internal Work History"
+   "options": "Employee Internal Work History",
+   "permlevel": 1
   },
   {
    "collapsible": 1,
@@ -617,7 +657,8 @@
    "fieldtype": "Date",
    "label": "Resignation Letter Date",
    "oldfieldname": "resignation_letter_date",
-   "oldfieldtype": "Date"
+   "oldfieldtype": "Date",
+   "permlevel": 1
   },
   {
    "fieldname": "relieving_date",
@@ -626,14 +667,16 @@
    "mandatory_depends_on": "eval:doc.status == \"Left\"",
    "no_copy": 1,
    "oldfieldname": "relieving_date",
-   "oldfieldtype": "Date"
+   "oldfieldtype": "Date",
+   "permlevel": 1
   },
   {
    "fieldname": "reason_for_leaving",
    "fieldtype": "Small Text",
    "label": "Reason for Leaving",
    "oldfieldname": "reason_for_leaving",
-   "oldfieldtype": "Data"
+   "oldfieldtype": "Data",
+   "permlevel": 1
   },
   {
    "fieldname": "leave_encashed",
@@ -641,7 +684,8 @@
    "label": "Leave Encashed?",
    "oldfieldname": "leave_encashed",
    "oldfieldtype": "Select",
-   "options": "\nYes\nNo"
+   "options": "\nYes\nNo",
+   "permlevel": 1
   },
   {
    "depends_on": "eval:doc.leave_encashed ==\"Yes\"",
@@ -649,7 +693,8 @@
    "fieldtype": "Date",
    "label": "Encashment Date",
    "oldfieldname": "encashment_date",
-   "oldfieldtype": "Date"
+   "oldfieldtype": "Date",
+   "permlevel": 1
   },
   {
    "fieldname": "exit_interview_details",
@@ -663,21 +708,24 @@
    "fieldtype": "Date",
    "label": "Exit Interview Held On",
    "oldfieldname": "held_on",
-   "oldfieldtype": "Date"
+   "oldfieldtype": "Date",
+   "permlevel": 1
   },
   {
    "fieldname": "new_workplace",
    "fieldtype": "Data",
    "label": "New Workplace",
    "oldfieldname": "new_workplace",
-   "oldfieldtype": "Data"
+   "oldfieldtype": "Data",
+   "permlevel": 1
   },
   {
    "fieldname": "feedback",
    "fieldtype": "Small Text",
    "label": "Feedback",
    "oldfieldname": "feedback",
-   "oldfieldtype": "Text"
+   "oldfieldtype": "Text",
+   "permlevel": 1
   },
   {
    "fieldname": "lft",
@@ -705,6 +753,7 @@
    "fieldtype": "Data",
    "label": "Attendance Device ID (Biometric/RF tag ID)",
    "no_copy": 1,
+   "permlevel": 1,
    "unique": 1
   },
   {
@@ -731,7 +780,8 @@
    "fieldname": "ctc",
    "fieldtype": "Currency",
    "label": "Cost to Company (CTC)",
-   "options": "salary_currency"
+   "options": "salary_currency",
+   "permlevel": 1
   },
   {
    "fieldname": "basic_details_tab",
@@ -823,7 +873,8 @@
    "depends_on": "eval:doc.salary_mode == 'Bank'",
    "fieldname": "iban",
    "fieldtype": "Data",
-   "label": "IBAN"
+   "label": "IBAN",
+   "permlevel": 1
   },
   {
    "fieldname": "column_break_crky",
@@ -835,12 +886,14 @@
    "fieldtype": "Link",
    "label": "Religion",
    "options": "Religion",
+   "permlevel": 1,
    "reqd": 1
   },
   {
    "fieldname": "age",
    "fieldtype": "Int",
    "label": "Age",
+   "permlevel": 1,
    "read_only": 1
   },
   {
@@ -849,6 +902,7 @@
    "fieldtype": "Link",
    "label": "Place Of Birth",
    "options": "Location",
+   "permlevel": 1,
    "reqd": 1
   },
   {
@@ -873,18 +927,21 @@
    "fieldname": "grade",
    "fieldtype": "Link",
    "label": "Grade",
-   "options": "Employee Grade"
+   "options": "Employee Grade",
+   "permlevel": 1
   },
   {
    "allow_in_quick_entry": 1,
    "fieldname": "nip",
    "fieldtype": "Data",
-   "label": "NIP"
+   "label": "NIP",
+   "permlevel": 1
   },
   {
    "fieldname": "nik",
    "fieldtype": "Data",
    "label": "NIK",
+   "permlevel": 1,
    "reqd": 1
   },
   {
@@ -892,13 +949,15 @@
    "fieldtype": "Link",
    "label": "Employment Type",
    "options": "Employment Type",
+   "permlevel": 1,
    "reqd": 1
   },
   {
    "fieldname": "blood_group",
    "fieldtype": "Select",
    "label": "Blood Type",
-   "options": "\nA\nA+\nA-\nB\nB+\nB-\nAB\nAB+\nAB-\nO\nO+\nO-"
+   "options": "\nA\nA+\nA-\nB\nB+\nB-\nAB\nAB+\nAB-\nO\nO+\nO-",
+   "permlevel": 1
   },
   {
    "fieldname": "user_telegram",
@@ -908,17 +967,20 @@
   {
    "fieldname": "npwp",
    "fieldtype": "Data",
-   "label": "NPWP"
+   "label": "NPWP",
+   "permlevel": 1
   },
   {
    "fieldname": "kk_number",
    "fieldtype": "Data",
-   "label": "KK Number"
+   "label": "KK Number",
+   "permlevel": 1
   },
   {
    "fieldname": "married_date",
    "fieldtype": "Date",
-   "label": "Married Date"
+   "label": "Married Date",
+   "permlevel": 1
   }
  ],
  "icon": "fa fa-user",
@@ -926,7 +988,7 @@
  "image_field": "image",
  "is_tree": 1,
  "links": [],
- "modified": "2025-06-30 15:58:40.030381",
+ "modified": "2025-07-23 14:34:14.884682",
  "modified_by": "Administrator",
  "module": "Setup",
  "name": "Employee",
@@ -964,6 +1026,30 @@
    "read": 1,
    "report": 1,
    "role": "HR Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "permlevel": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "permlevel": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR User",
    "share": 1,
    "write": 1
   }
