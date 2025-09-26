@@ -44,7 +44,7 @@ class Employee(NestedSet):
 		bio: DF.TextEditor | None
 		blood_group: DF.Literal["", "A", "A+", "A-", "B", "B+", "B-", "AB", "AB+", "AB-", "O", "O+", "O-"]
 		branch: DF.Link | None
-		cell_number: DF.Data | None
+		cell_number: DF.Phone | None
 		company: DF.Link
 		company_email: DF.Data | None
 		contract_end_date: DF.Date | None
