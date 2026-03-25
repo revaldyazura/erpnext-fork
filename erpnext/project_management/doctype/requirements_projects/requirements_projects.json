@@ -1,0 +1,135 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-09-29 10:17:50.127888",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "pipeline_id",
+  "column_break_dgqi",
+  "project_id",
+  "data_section",
+  "title",
+  "tech_validation",
+  "validation_date",
+  "column_break_bowc",
+  "category",
+  "validation_reason",
+  "validation_by",
+  "column_break_ddgl",
+  "requirement_status",
+  "priority",
+  "employee_name",
+  "description_section",
+  "description"
+ ],
+ "fields": [
+  {
+   "fieldname": "pipeline_id",
+   "fieldtype": "Link",
+   "label": "Pipeline ID",
+   "options": "Pipeline Projects"
+  },
+  {
+   "fieldname": "column_break_dgqi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "project_id",
+   "fieldtype": "Link",
+   "label": "Project ID",
+   "options": "Projects Brief"
+  },
+  {
+   "fieldname": "data_section",
+   "fieldtype": "Section Break",
+   "label": "Data"
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Title"
+  },
+  {
+   "fieldname": "tech_validation",
+   "fieldtype": "Data",
+   "label": "Tech Validation"
+  },
+  {
+   "fieldname": "column_break_bowc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Data",
+   "label": "Category"
+  },
+  {
+   "fieldname": "validation_reason",
+   "fieldtype": "Data",
+   "label": "Validation Reason"
+  },
+  {
+   "fieldname": "description_section",
+   "fieldtype": "Section Break",
+   "label": "Description"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Long Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "validation_date",
+   "fieldtype": "Date",
+   "label": "Validation Date"
+  },
+  {
+   "fieldname": "validation_by",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Validation By",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "requirement_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Requirement Status",
+   "options": "Accepted\nPending\nDenied"
+  },
+  {
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Priority",
+   "options": "Low\nMedium\nHigh"
+  },
+  {
+   "fieldname": "column_break_ddgl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "validation_by.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Validation By Name"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-09-29 10:42:55.662277",
+ "modified_by": "Administrator",
+ "module": "Project Management",
+ "name": "Requirements Projects",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

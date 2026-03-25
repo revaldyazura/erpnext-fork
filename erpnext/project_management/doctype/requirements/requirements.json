@@ -1,0 +1,171 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-09-24 16:51:48.456859",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "origin_section",
+  "pipeline_id",
+  "pipeline_project_name",
+  "project_id",
+  "project_name",
+  "data_section",
+  "title",
+  "priority",
+  "category",
+  "requirement_status",
+  "column_break_bowc",
+  "tech_validation",
+  "validation_date",
+  "validation_by",
+  "validation_by_name",
+  "column_break_hjes",
+  "validation_reason",
+  "description_section",
+  "description"
+ ],
+ "fields": [
+  {
+   "fieldname": "pipeline_id",
+   "fieldtype": "Link",
+   "label": "Pipeline ID",
+   "options": "Pipeline Projects"
+  },
+  {
+   "fieldname": "project_id",
+   "fieldtype": "Link",
+   "label": "Project ID",
+   "options": "Projects Brief"
+  },
+  {
+   "fieldname": "origin_section",
+   "fieldtype": "Section Break",
+   "label": "Origin"
+  },
+  {
+   "fieldname": "data_section",
+   "fieldtype": "Section Break",
+   "label": "Data"
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "Title"
+  },
+  {
+   "default": "0",
+   "fieldname": "tech_validation",
+   "fieldtype": "Check",
+   "label": "Tech Validation"
+  },
+  {
+   "fieldname": "column_break_bowc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Select",
+   "label": "Category",
+   "options": "Integrasi\nFungsi\nData\nSecurity"
+  },
+  {
+   "fieldname": "validation_reason",
+   "fieldtype": "Long Text",
+   "label": "Validation Reason"
+  },
+  {
+   "fieldname": "description_section",
+   "fieldtype": "Section Break",
+   "label": "Description"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "label": "Description"
+  },
+  {
+   "fieldname": "validation_date",
+   "fieldtype": "Date",
+   "label": "Validation Date"
+  },
+  {
+   "fieldname": "validation_by",
+   "fieldtype": "Link",
+   "label": "Validation By",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "column_break_hjes",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "requirement_status",
+   "fieldtype": "Select",
+   "label": "Requirement Status",
+   "options": "\nAccepted\nPending\nDenied"
+  },
+  {
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "label": "Priority",
+   "options": "Low\nMedium\nHigh"
+  },
+  {
+   "fetch_from": "validation_by.employee_name",
+   "fieldname": "validation_by_name",
+   "fieldtype": "Data",
+   "label": "Validation By Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "pipeline_id.project_name",
+   "fieldname": "pipeline_project_name",
+   "fieldtype": "Data",
+   "label": "Pipeline Project Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "project_id.project_name",
+   "fieldname": "project_name",
+   "fieldtype": "Data",
+   "label": "Project Name",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-10-03 14:59:13.073736",
+ "modified_by": "Administrator",
+ "module": "Project Management",
+ "name": "Requirements",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "Employee",
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "title",
+ "track_changes": 1
+}

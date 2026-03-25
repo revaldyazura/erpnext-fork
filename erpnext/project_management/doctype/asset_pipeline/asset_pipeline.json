@@ -1,0 +1,61 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:pipeline_status",
+ "creation": "2025-09-24 14:47:42.378369",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "pipeline_status",
+  "pipeline_percent"
+ ],
+ "fields": [
+  {
+   "fieldname": "pipeline_status",
+   "fieldtype": "Data",
+   "label": "Pipeline Status",
+   "unique": 1
+  },
+  {
+   "fieldname": "pipeline_percent",
+   "fieldtype": "Percent",
+   "in_list_view": 1,
+   "label": "Pipeline Percent"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-10-02 13:34:51.577799",
+ "modified_by": "Administrator",
+ "module": "Project Management",
+ "name": "Asset Pipeline",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "Employee",
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "pipeline_status",
+ "track_changes": 1
+}

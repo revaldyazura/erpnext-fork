@@ -1,0 +1,210 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:PPL-{YYYY}-{client_alias}-.####",
+ "creation": "2025-09-24 11:13:18.669022",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "data_section",
+  "project_name",
+  "opportunity_source",
+  "estimate_value",
+  "column_break_parp",
+  "client_id",
+  "client_name",
+  "details_section",
+  "pipeline_status",
+  "pipeline_percent",
+  "column_break_kwbx",
+  "sales_owner",
+  "owner_pipeline",
+  "column_break_vhgb",
+  "sales_owner_name",
+  "owner_pipeline_name",
+  "approach_team_section",
+  "members",
+  "approval_by",
+  "notes_section",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "client_id",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Client ID",
+   "options": "Client",
+   "reqd": 1
+  },
+  {
+   "fieldname": "project_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Project Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_parp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "opportunity_source",
+   "fieldtype": "Select",
+   "label": "Opportunity Source",
+   "options": "Direct Request\nPartner Referral\nTender"
+  },
+  {
+   "fieldname": "estimate_value",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Estimate Value"
+  },
+  {
+   "fieldname": "data_section",
+   "fieldtype": "Section Break",
+   "label": "Data"
+  },
+  {
+   "fieldname": "details_section",
+   "fieldtype": "Section Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "pipeline_status",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Pipeline Status",
+   "options": "Asset Pipeline",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "pipeline_status.pipeline_percent",
+   "fieldname": "pipeline_percent",
+   "fieldtype": "Percent",
+   "in_list_view": 1,
+   "label": "Pipeline Percent",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_kwbx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sales_owner",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Sales Owner",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fieldname": "owner_pipeline",
+   "fieldtype": "Link",
+   "label": "Owner Pipeline",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fieldname": "approach_team_section",
+   "fieldtype": "Section Break",
+   "label": "Approach"
+  },
+  {
+   "fieldname": "members",
+   "fieldtype": "Table",
+   "label": "Team",
+   "options": "Approach Team",
+   "reqd": 1
+  },
+  {
+   "fieldname": "notes_section",
+   "fieldtype": "Section Break",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Long Text"
+  },
+  {
+   "fieldname": "column_break_vhgb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "sales_owner.employee_name",
+   "fieldname": "sales_owner_name",
+   "fieldtype": "Data",
+   "label": "Sales Owner Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "owner_pipeline.employee_name",
+   "fieldname": "owner_pipeline_name",
+   "fieldtype": "Data",
+   "label": "Owner Pipeline Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "client_id.client_name",
+   "fieldname": "client_name",
+   "fieldtype": "Data",
+   "label": "Client Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "approval_by",
+   "fieldtype": "Table",
+   "label": "Approval",
+   "options": "Approval By",
+   "reqd": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-10-22 17:38:13.405940",
+ "modified_by": "Administrator",
+ "module": "Project Management",
+ "name": "Pipeline Projects",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "Employee",
+   "write": 1
+  },
+  {
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "permlevel": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "project_name",
+ "track_changes": 1
+}

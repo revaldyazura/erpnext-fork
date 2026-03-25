@@ -1,0 +1,147 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:MFB-{YYYY}-{client_id}-{####}",
+ "creation": "2025-09-25 16:23:20.993525",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "project_id",
+  "project_name",
+  "date",
+  "topic",
+  "created_by",
+  "column_break_sjsq",
+  "status",
+  "due_date",
+  "feedback_summary",
+  "action_items",
+  "created_by_name",
+  "section_break_nyoe",
+  "internal_participants",
+  "external_participants",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "project_id",
+   "fieldtype": "Link",
+   "label": "Project ID",
+   "options": "Projects Brief"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "topic",
+   "fieldtype": "Data",
+   "label": "Topic"
+  },
+  {
+   "fieldname": "internal_participants",
+   "fieldtype": "Table",
+   "label": "Internal Participants",
+   "options": "Internal Participants",
+   "reqd": 1
+  },
+  {
+   "fieldname": "external_participants",
+   "fieldtype": "Text",
+   "label": "External Participants",
+   "options": "External Participants"
+  },
+  {
+   "fieldname": "feedback_summary",
+   "fieldtype": "Data",
+   "label": "Feedback Summary"
+  },
+  {
+   "fieldname": "action_items",
+   "fieldtype": "Data",
+   "label": "Action Items"
+  },
+  {
+   "fieldname": "created_by",
+   "fieldtype": "Link",
+   "label": "Created By",
+   "options": "Employee",
+   "read_only": 1
+  },
+  {
+   "fieldname": "due_date",
+   "fieldtype": "Date",
+   "label": "Due Date"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Open\nIn Progress\nCompleted\nIn Review"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Text",
+   "label": "Notes"
+  },
+  {
+   "fetch_from": "project_id.project_name",
+   "fieldname": "project_name",
+   "fieldtype": "Data",
+   "label": "Project Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_sjsq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "created_by.employee_name",
+   "fieldname": "created_by_name",
+   "fieldtype": "Data",
+   "label": "Created By Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_nyoe",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-10-09 14:04:51.175099",
+ "modified_by": "Administrator",
+ "module": "Project Management",
+ "name": "Minutes of Meeting",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "Employee",
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "topic",
+ "track_changes": 1
+}

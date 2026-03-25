@@ -15,7 +15,7 @@
  "hide_custom": 0,
  "icon": "sell",
  "idx": 0,
- "is_hidden": 0,
+ "is_hidden": 1,
  "label": "Selling",
  "links": [
   {
@@ -622,7 +622,7 @@
    "type": "Link"
   }
  ],
- "modified": "2024-12-13 14:37:39.781540",
+ "modified": "2025-10-01 11:41:50.264673",
  "modified_by": "Administrator",
  "module": "Selling",
  "name": "Selling",
@@ -633,7 +633,7 @@
  "quick_lists": [],
  "restrict_to_domain": "",
  "roles": [],
- "sequence_id": 6.0,
+ "sequence_id": 7.0,
  "shortcuts": [
   {
    "color": "Grey",
@@ -668,6 +668,7 @@
    "format": "{} Open",
    "label": "Sales Analytics",
    "link_to": "Sales Analytics",
+   "report_ref_doctype": "Sales Order",
    "stats_filter": "{ \"Status\": \"Open\" }",
    "type": "Report"
   },

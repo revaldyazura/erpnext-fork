@@ -1,0 +1,206 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:PRJ-{YYYY}-{client_alias}-.####",
+ "creation": "2025-09-24 17:05:53.899058",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "data_section",
+  "project_origin",
+  "project_name",
+  "column_break_kfaw",
+  "client_id",
+  "client_name",
+  "column_break_smka",
+  "pipeline_id",
+  "status",
+  "details_section",
+  "project_type",
+  "start_date",
+  "project_manager",
+  "project_owner",
+  "description",
+  "column_break_yzfo",
+  "channel",
+  "end_date",
+  "project_manager_name",
+  "project_owner_name",
+  "notes",
+  "approach_section",
+  "project_team",
+  "approval_by"
+ ],
+ "fields": [
+  {
+   "fieldname": "project_origin",
+   "fieldtype": "Select",
+   "label": "Project Origin",
+   "options": "Pipeline\nRnD\nDirect"
+  },
+  {
+   "fieldname": "column_break_kfaw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "pipeline_id",
+   "fieldtype": "Link",
+   "label": "Pipeline ID",
+   "options": "Pipeline Projects"
+  },
+  {
+   "fieldname": "client_id",
+   "fieldtype": "Link",
+   "label": "Client ID",
+   "options": "Client"
+  },
+  {
+   "fieldname": "project_name",
+   "fieldtype": "Data",
+   "label": "Project Name"
+  },
+  {
+   "fieldname": "data_section",
+   "fieldtype": "Section Break",
+   "label": "Data"
+  },
+  {
+   "fieldname": "details_section",
+   "fieldtype": "Section Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "project_type",
+   "fieldtype": "Select",
+   "label": "Project Type",
+   "options": "\nSaaS\nOn Premise\nHybrid\nResearch"
+  },
+  {
+   "fieldname": "column_break_yzfo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "project_manager",
+   "fieldtype": "Link",
+   "label": "Project Manager",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date"
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date"
+  },
+  {
+   "fieldname": "channel",
+   "fieldtype": "Data",
+   "label": "Channel"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Long Text",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "label": "Description"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Ongoing\nOn hold\nPre Approved"
+  },
+  {
+   "fetch_from": "project_manager.employee_name",
+   "fieldname": "project_manager_name",
+   "fieldtype": "Data",
+   "label": "Project Manager Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "client_id.client_name",
+   "fieldname": "client_name",
+   "fieldtype": "Data",
+   "label": "Client Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_smka",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "approach_section",
+   "fieldtype": "Section Break",
+   "label": "Approach"
+  },
+  {
+   "fieldname": "project_owner",
+   "fieldtype": "Link",
+   "label": "Project Owner",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "project_owner.employee_name",
+   "fieldname": "project_owner_name",
+   "fieldtype": "Data",
+   "label": "Project Owner Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "project_team",
+   "fieldtype": "Table",
+   "label": "Project Team",
+   "options": "Project Team",
+   "reqd": 1
+  },
+  {
+   "fieldname": "approval_by",
+   "fieldtype": "Table",
+   "label": "Approval By",
+   "options": "Approval By",
+   "reqd": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-10-09 10:44:30.163883",
+ "modified_by": "Administrator",
+ "module": "Project Management",
+ "name": "Projects Brief",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "Employee",
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "project_name",
+ "track_changes": 1
+}

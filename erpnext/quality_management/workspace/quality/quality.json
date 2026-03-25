@@ -145,7 +145,7 @@
    "type": "Link"
   }
  ],
- "modified": "2025-07-09 21:20:19.850848",
+ "modified": "2025-10-01 11:42:45.978961",
  "modified_by": "Administrator",
  "module": "Quality Management",
  "name": "Quality",
@@ -156,7 +156,7 @@
  "quick_lists": [],
  "restrict_to_domain": "",
  "roles": [],
- "sequence_id": 9.0,
+ "sequence_id": 10.0,
  "shortcuts": [
   {
    "color": "Grey",

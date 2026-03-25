@@ -1,0 +1,165 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:CL-{YYYY}-{client_alias}-{sub_unit_alias}",
+ "creation": "2025-09-24 11:29:15.735401",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "data_section",
+  "client_alias",
+  "client_name",
+  "column_break_qybk",
+  "sub_unit_alias",
+  "sub_unit",
+  "details_section",
+  "column_break_fjwf",
+  "sector",
+  "city",
+  "email",
+  "column_break_vyrb",
+  "pic_name",
+  "pic_role",
+  "contact_number",
+  "column_break_yqou",
+  "preffered_contact_method",
+  "notes_section",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "client_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Client Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "client_alias",
+   "fieldtype": "Data",
+   "label": "Client Alias",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_qybk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sub_unit",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Sub Unit",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sub_unit_alias",
+   "fieldtype": "Data",
+   "label": "Sub Unit Alias",
+   "reqd": 1
+  },
+  {
+   "fieldname": "data_section",
+   "fieldtype": "Section Break",
+   "label": "Data"
+  },
+  {
+   "fieldname": "column_break_fjwf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sector",
+   "fieldtype": "Data",
+   "label": "Sector"
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Link",
+   "label": "City",
+   "options": "Location"
+  },
+  {
+   "fieldname": "column_break_vyrb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "pic_name",
+   "fieldtype": "Data",
+   "label": "PIC Name"
+  },
+  {
+   "fieldname": "pic_role",
+   "fieldtype": "Data",
+   "label": "PIC Role"
+  },
+  {
+   "fieldname": "details_section",
+   "fieldtype": "Section Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "fieldname": "contact_number",
+   "fieldtype": "Phone",
+   "label": "Contact Number"
+  },
+  {
+   "fieldname": "notes_section",
+   "fieldtype": "Section Break",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Long Text",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "column_break_yqou",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "preffered_contact_method",
+   "fieldtype": "Data",
+   "label": "Preffered Contact Method"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-10-01 15:44:06.804248",
+ "modified_by": "Administrator",
+ "module": "Project Management",
+ "name": "Client",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "Employee",
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "client_name",
+ "track_changes": 1
+}

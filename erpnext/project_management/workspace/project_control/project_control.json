@@ -1,0 +1,127 @@
+{
+ "app": "erpnext",
+ "charts": [],
+ "content": "[{\"id\":\"t1D6zWW-au\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Pipeline Project\",\"col\":6}},{\"id\":\"Rvk_fPt3ig\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Project\",\"col\":6}},{\"id\":\"gd2zx1LdSd\",\"type\":\"card\",\"data\":{\"card_name\":\"Additional\",\"col\":12}}]",
+ "creation": "2025-09-24 11:03:06.293320",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "projects",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Project Control",
+ "link_type": "DocType",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Additional",
+   "link_count": 7,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Requirements",
+   "link_count": 0,
+   "link_to": "Requirements",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Client",
+   "link_count": 0,
+   "link_to": "Client",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Partner",
+   "link_count": 0,
+   "link_to": "Partner Projects",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Changelogs",
+   "link_count": 0,
+   "link_to": "Changelogs",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Contract",
+   "link_count": 0,
+   "link_to": "Partner Contract",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "MoM",
+   "link_count": 0,
+   "link_to": "Minutes of Meeting",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Documents",
+   "link_count": 0,
+   "link_to": "Documents Management",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2025-10-02 10:13:11.369685",
+ "modified_by": "Administrator",
+ "module": "Project Management",
+ "name": "Project Control",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [
+  {
+   "document_type": "Projects Brief",
+   "label": "Project",
+   "quick_list_filter": "[]"
+  },
+  {
+   "document_type": "Pipeline Projects",
+   "label": "Pipeline Project",
+   "quick_list_filter": "[]"
+  }
+ ],
+ "roles": [
+  {
+   "role": "Employee"
+  }
+ ],
+ "sequence_id": 21.0,
+ "shortcuts": [],
+ "title": "Project Control",
+ "type": "Workspace"
+}

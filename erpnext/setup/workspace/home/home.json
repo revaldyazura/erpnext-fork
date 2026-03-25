@@ -10,7 +10,7 @@
  "hide_custom": 0,
  "icon": "home",
  "idx": 0,
- "is_hidden": 0,
+ "is_hidden": 1,
  "label": "Home",
  "links": [
   {
@@ -233,7 +233,7 @@
    "type": "Link"
   }
  ],
- "modified": "2025-07-02 14:12:28.407612",
+ "modified": "2025-10-01 11:41:27.944707",
  "modified_by": "Administrator",
  "module": "Setup",
  "name": "Home",
@@ -244,7 +244,7 @@
  "quick_lists": [],
  "restrict_to_domain": "",
  "roles": [],
- "sequence_id": 1.0,
+ "sequence_id": 2.0,
  "shortcuts": [
   {
    "label": "Item",

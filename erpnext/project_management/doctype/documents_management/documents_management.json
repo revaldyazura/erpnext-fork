@@ -1,0 +1,151 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "DOC-.YYYY.-.####",
+ "creation": "2025-09-25 15:57:10.109213",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "related_id",
+  "related_document_name",
+  "document_title",
+  "attachment",
+  "version",
+  "notes",
+  "column_break_pmmd",
+  "related_to",
+  "status",
+  "document_type",
+  "created_date",
+  "uploaded_by",
+  "uploaded_by_name"
+ ],
+ "fields": [
+  {
+   "fieldname": "related_to",
+   "fieldtype": "Select",
+   "label": "Related To",
+   "options": "Pipeline Projects\nProjects Brief\nClient\nRequirements\nChangelogs\nMinutes of Meeting\nPartner Projects\nPartner Contract"
+  },
+  {
+   "fieldname": "related_id",
+   "fieldtype": "Dynamic Link",
+   "label": "Related ID",
+   "options": "related_to"
+  },
+  {
+   "fieldname": "document_type",
+   "fieldtype": "Select",
+   "label": "Document Type",
+   "options": "Kontrak\nKAK\nProposal\nSpec\nMoM\nNDA\nAgreement\nMom"
+  },
+  {
+   "fieldname": "document_title",
+   "fieldtype": "Data",
+   "label": "Document Title"
+  },
+  {
+   "fieldname": "attachment",
+   "fieldtype": "Attach",
+   "label": "Attachment"
+  },
+  {
+   "fieldname": "version",
+   "fieldtype": "Data",
+   "label": "Version"
+  },
+  {
+   "fieldname": "created_date",
+   "fieldtype": "Date",
+   "label": "Created Date"
+  },
+  {
+   "fieldname": "uploaded_by",
+   "fieldtype": "Link",
+   "label": "Uploaded By",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Text",
+   "label": "Notes",
+   "max_height": "150px"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Active\nArchived"
+  },
+  {
+   "fetch_from": "uploaded_by.employee_name",
+   "fieldname": "uploaded_by_name",
+   "fieldtype": "Data",
+   "label": "Uploaded By Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "related_document_name",
+   "fieldtype": "Data",
+   "label": "Related Document Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_pmmd",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-10-09 14:50:20.461026",
+ "modified_by": "Administrator",
+ "module": "Project Management",
+ "name": "Documents Management",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "Employee",
+   "write": 1
+  },
+  {
+   "permlevel": 1,
+   "read": 1,
+   "role": "Employee"
+  },
+  {
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "permlevel": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "document_title",
+ "track_changes": 1
+}

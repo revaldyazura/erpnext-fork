@@ -1,4 +1,5 @@
 {
+ "app": "erpnext",
  "charts": [
   {
    "chart_name": "Asset Value Analytics",
@@ -182,6 +183,7 @@
    "link_to": "Asset Maintenance",
    "link_type": "Report",
    "onboard": 0,
+   "report_ref_doctype": "Asset Maintenance",
    "type": "Link"
   },
   {
@@ -193,10 +195,11 @@
    "link_to": "Asset Activity",
    "link_type": "Report",
    "onboard": 0,
+   "report_ref_doctype": "Asset Activity",
    "type": "Link"
   }
  ],
- "modified": "2024-01-05 17:40:34.570041",
+ "modified": "2025-10-07 15:20:45.564179",
  "modified_by": "Administrator",
  "module": "Assets",
  "name": "Assets",
@@ -206,7 +209,11 @@
  "public": 1,
  "quick_lists": [],
  "restrict_to_domain": "",
- "roles": [],
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ],
  "sequence_id": 7.0,
  "shortcuts": [
   {
@@ -222,6 +229,7 @@
   {
    "label": "Fixed Asset Register",
    "link_to": "Fixed Asset Register",
+   "report_ref_doctype": "Asset",
    "type": "Report"
   },
   {
@@ -230,5 +238,6 @@
    "type": "Dashboard"
   }
  ],
- "title": "Assets"
+ "title": "Assets",
+ "type": "Workspace"
 }

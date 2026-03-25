@@ -1,5 +1,6 @@
 app_name = "erpnext"
-app_title = "ERPNext"
+app_title = "Project Control"
+app_title_original = "ERPNext"
 app_publisher = "Frappe Technologies Pvt. Ltd."
 app_description = """ERP made simple"""
 app_icon = "fa fa-th"
@@ -8,7 +9,8 @@ app_email = "hello@frappe.io"
 app_license = "GNU General Public License (v3)"
 source_link = "https://github.com/frappe/erpnext"
 app_logo_url = "/assets/erpnext/images/erpnext-logo.svg"
-app_home = "/app/home"
+app_home = "/app/portal"
+app_home_original = "/app/home"
 
 add_to_apps_screen = [
 	{
@@ -393,6 +395,12 @@ doc_events = {
 	"Integration Request": {
 		"validate": "erpnext.accounts.doctype.payment_request.payment_request.validate_payment"
 	},
+    "Pipeline Projects": {
+        "on_update": "erpnext.project_management.doctype.pipeline_projects.pipeline_projects.update_fields"
+    },
+    "Documents Management": {
+        "on_update": "erpnext.project_management.doctype.documents_management.documents_management.update_fields"
+    },
 }
 
 # function should expect the variable and doc as arguments

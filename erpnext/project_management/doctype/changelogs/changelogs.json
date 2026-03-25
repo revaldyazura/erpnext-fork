@@ -1,0 +1,96 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "CHG-.YY.MM.DD.-.###",
+ "creation": "2025-09-25 15:47:12.189636",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "data_section",
+  "requirements_id",
+  "requirements_title",
+  "date",
+  "change_description",
+  "change_by",
+  "change_by_name"
+ ],
+ "fields": [
+  {
+   "fieldname": "requirements_id",
+   "fieldtype": "Link",
+   "label": "Requirements ID",
+   "options": "Requirements"
+  },
+  {
+   "fieldname": "data_section",
+   "fieldtype": "Section Break",
+   "label": "Data"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "change_description",
+   "fieldtype": "Text",
+   "label": "Change Description"
+  },
+  {
+   "fieldname": "change_by",
+   "fieldtype": "Link",
+   "label": "Change By",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "change_by.employee_name",
+   "fieldname": "change_by_name",
+   "fieldtype": "Data",
+   "label": "Change By Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "requirements_id.title",
+   "fieldname": "requirements_title",
+   "fieldtype": "Data",
+   "label": "Requirements Title",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-10-03 15:00:02.691463",
+ "modified_by": "Administrator",
+ "module": "Project Management",
+ "name": "Changelogs",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "Employee",
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "change_description",
+ "track_changes": 1
+}

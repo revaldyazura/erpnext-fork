@@ -438,7 +438,7 @@
    "type": "Link"
   }
  ],
- "modified": "2025-07-09 21:27:06.211750",
+ "modified": "2025-10-01 11:43:03.294236",
  "modified_by": "Administrator",
  "module": "Setup",
  "name": "Settings",
@@ -449,7 +449,7 @@
  "quick_lists": [],
  "restrict_to_domain": "",
  "roles": [],
- "sequence_id": 19.0,
+ "sequence_id": 20.0,
  "shortcuts": [
   {
    "color": "Grey",
