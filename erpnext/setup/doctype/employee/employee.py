@@ -115,6 +115,9 @@ class Employee(NestedSet):
 		section: DF.Link | None
 		status: DF.Literal["Active", "Inactive", "Suspended", "Left"]
 		team: DF.Link | None
+		telegram_chat_id: DF.Data | None
+		telegram_link_method: DF.Data | None
+		telegram_linked_at: DF.Data | None
 		unsubscribed: DF.Check
 		user_id: DF.Link | None
 		user_telegram: DF.Data | None

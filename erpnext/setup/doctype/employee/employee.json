@@ -80,6 +80,12 @@
   "attendance_device_id",
   "column_break_44",
   "holiday_list",
+  "section_break_isom",
+  "telegram_chat_id",
+  "column_break_exmj",
+  "telegram_linked_at",
+  "column_break_svdu",
+  "telegram_link_method",
   "salary_information",
   "ctc",
   "salary_currency",
@@ -981,6 +987,36 @@
    "fieldtype": "Date",
    "label": "Married Date",
    "permlevel": 1
+  },
+  {
+   "fieldname": "telegram_chat_id",
+   "fieldtype": "Data",
+   "label": "Telegram Chat ID",
+   "permlevel": 2
+  },
+  {
+   "fieldname": "section_break_isom",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_exmj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "telegram_linked_at",
+   "fieldtype": "Data",
+   "label": "Tele Link At",
+   "permlevel": 2
+  },
+  {
+   "fieldname": "column_break_svdu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "telegram_link_method",
+   "fieldtype": "Data",
+   "label": "Tele Link Method",
+   "permlevel": 2
   }
  ],
  "icon": "fa fa-user",
@@ -988,7 +1024,7 @@
  "image_field": "image",
  "is_tree": 1,
  "links": [],
- "modified": "2025-09-25 11:38:59.327519",
+ "modified": "2026-03-05 16:51:23.836915",
  "modified_by": "Administrator",
  "module": "Setup",
  "name": "Employee",
